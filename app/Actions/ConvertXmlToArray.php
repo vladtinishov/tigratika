@@ -26,18 +26,34 @@ class ConvertXmlToArray
 
             $categoryId = (int) $product->categoryId;
 
-            $subSubCategory = $this->getCategoryNameById($categoriesXml, $categoryId);
-            $subCategory = $this->getCategoryNameById($categoriesXml, $subSubCategory ? $subSubCategory['parentId'] : false);
-            $category = $this->getCategoryNameById($categoriesXml, $subCategory ? $subCategory['parentId'] : false);
-
-            $data['category'] = $category['name'];
-            $data['sub_category'] = $subCategory['name'];
-            $data['sub_sub_category'] = $subSubCategory['name'];
-
+            $categoriesData = $this->getCategories($categoriesXml, $categoryId);
+            $data += $categoriesData;
             $products[] = $data;
         }
 
         return $products;
+    }
+
+    public function getCategories($xml, $catId)
+    {
+        $categories = [];
+        $cat = $this->getCategoryNameById($xml, $catId);
+        $categories['sub_sub_category'] = $cat['name'];
+
+        $cat = $this->getCategoryNameById($xml, $cat['parentId']);
+        $categories['sub_category'] = $cat['name'];
+
+        $cat = $this->getCategoryNameById($xml, $cat['parentId']);
+        $categories['category'] = $cat['name'];
+
+        if (!$categories['category']) {
+            $categories['category'] = $categories['sub_category'];
+            $categories['sub_category'] = $categories['sub_sub_category'];
+            $categories['sub_sub_category'] = '';
+        }
+
+
+        return $categories;
     }
 
     public function getCategoryNameById($categoriesXml, $id): array
