@@ -9,7 +9,7 @@
             >
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                    Dashboard
+                    Дашборд
                 </p>
             </a>
         </li>
@@ -20,7 +20,7 @@
             >
                 <i class="nav-icon fas fa-th"></i>
                 <p>
-                    Products
+                    Продукты
                 </p>
             </a>
         </li>

@@ -7,7 +7,7 @@
                 <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Products</span>
+                    <span class="info-box-text">Продукты</span>
                     <span class="info-box-number">{{ $productsCount }}</span>
                 </div>
                 <!-- /.info-box-content -->

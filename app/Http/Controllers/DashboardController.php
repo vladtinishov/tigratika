@@ -15,7 +15,7 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $title = 'Dashboard';
+        $title = 'Дашборд';
         $productsCount = $this->productRepo->getCount();
 
         return view('pages.dashboard.index')->with([

@@ -83,7 +83,7 @@
                     }
                 },
                 {
-                    title: "Name",
+                    title: "Название",
                     name: "name",
                     type: "text",
                     itemTemplate: function(value, item) {
@@ -94,14 +94,14 @@
                         return $(`<a href="${item.url}"></a>`).append($container);
                     }
                 },
-                { title: "Available", name: "available", type: "checkbox" },
-                { title: "Price", name: "price", type: "number" },
-                { title: "Old Price", name: "oldprice", type: "number" },
-                { title: "Currency", name: "currency_id", type: "text" },
-                { title: "Vendor", name: "vendor", type: "text" },
-                { title: "Category", name: "category", type: "text" },
-                { title: "Sub category", name: "sub_category", type: "text", width: 150 },
-                { title: "Sub sub category", name: "sub_sub_category", type: "text", width: 200 },
+                { title: "Доступен", name: "available", type: "checkbox" },
+                { title: "Цена", name: "price", type: "number" },
+                { title: "Старая цена", name: "oldprice", type: "number" },
+                { title: "Валюта", name: "currency_id", type: "text" },
+                { title: "Вендор", name: "vendor", type: "text" },
+                { title: "Категория", name: "category", type: "text" },
+                { title: "Под категория", name: "sub_category", type: "text", width: 150 },
+                { title: "Под под категория", name: "sub_sub_category", type: "text", width: 200 },
             ]
         });
 

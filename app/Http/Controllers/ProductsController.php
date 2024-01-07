@@ -20,7 +20,7 @@ class ProductsController extends Controller
 
     public function index()
     {
-        $title = 'Products';
+        $title = 'Продукты';
         return view('pages.products.index')->with([
             'title' => $title,
         ]);
